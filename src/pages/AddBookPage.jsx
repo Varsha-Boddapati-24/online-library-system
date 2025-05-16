@@ -4,11 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { addBook } from "../store/bookSlice";
 import "./AddBookPage.css";
 import { addCategory } from "../store/categorySlice";
+import { useSelector } from "react-redux";
+
+
 
 function AddBookPage() {
   // Redux dispatch to send actions
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const categories = useSelector((store) => store.category.categories);
   // State to store form input values
   const [formData, setFormData] = useState({
     title: "",
@@ -83,15 +88,21 @@ function AddBookPage() {
       ...formData,
       image: formData.image.trim() || "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
     };
-    // new category object
-    const newCategory = {
-      id: Date.now(),
-      name: formData.category.trim()
+    const categoryExists = categories.some(
+      cat => cat.name.toLowerCase() === formData.category.trim().toLowerCase()
+    );
 
+    if (!categoryExists) {
+      const newCategory = {
+        id: Date.now(),
+        name: formData.category.trim()
+      };
+      dispatch(addCategory(newCategory));
     }
-    // Dispatch Redux actions to add the book and category to the store
+
+    // Dispatch Redux actions to add the book  to the store
     dispatch(addBook(newBook));
-    dispatch(addCategory(newCategory))
+
     // Navigate user back to the books listing page after adding
     navigate("/books");
   };

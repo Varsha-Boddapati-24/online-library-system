@@ -15,7 +15,7 @@ const categories=useSelector((store)=>store.category.categories)
 
  // Filter books based on category param and search query (title or author)
   const filteredBooks = books.filter(book => {
-    const matchesCategory = category ? book.category === category : true;
+    const matchesCategory = category ? book.category.toLowerCase() ===  category.toLowerCase() : true;
     const matchesSearch = book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           book.author.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
@@ -34,7 +34,7 @@ const categories=useSelector((store)=>store.category.categories)
            {/* List categories as links; highlight if selected */}
           {categories.map(cat => (
             <Link to={`/books/${cat.name}`}  key={cat.id}> 
-            <li key={cat.id} className={category === cat.name ? "active-category" : ""} >
+            <li key={cat.id} className={category?.toLowerCase() === cat.name.toLowerCase() ? "active-category" : ""} >
             {cat.name}</li>
             </Link>
           ))}

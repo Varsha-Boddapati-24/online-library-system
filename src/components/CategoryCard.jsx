@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./CategoryCard.css";
 
 // CategoryCard component takes a category object as a prop
-const CategoryCard = ({ category }) => {
+function CategoryCard  ({ category }) {
   return (
       // Link navigates to the category page, URL uses lowercase category name
     <Link to={`/books/${category.name?.toLowerCase()}`} className="category-card-link">
