@@ -1,0 +1,76 @@
+/* Category Card Container: fixed max width, white bg, rounded corners, subtle shadow, smooth transform on hover */ 
+.category-card {
+  width: 100%;
+  max-width: 150px;  
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin: 10px;
+  text-align: center;  
+}
+
+/* Category Image: circular shape, fixed size, object-fit cover to maintain aspect ratio */
+.category-card-img {
+  width: 120px; 
+  height: 120px;
+   border-radius: 50%; 
+  object-fit: cover;  
+}
+/* Title inside card: bold, medium font size, padding around text, dark color */
+.category-card-title {
+  font-size: 1rem; 
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  margin-top: 5px;
+}
+/* Category link style: remove underline */
+.category-card-link {
+
+  text-decoration: none;
+}
+
+
+/* Hover effect: lifts card slightly up with stronger shadow for a subtle pop */
+.category-card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+/* Responsive styles for tablets and smaller screens */
+@media (max-width: 768px) {
+    /* Smaller card container */
+  .category-card {
+    max-width: 100px; 
+    margin: 6px;
+    padding: 4px;
+  }
+/* Smaller circular image */  
+  .category-card-img {
+    width: 70px;
+    height: 70px;
+  }
+ /* Smaller font size and padding for title */
+  .category-card-title {
+    font-size: 0.75rem;
+    padding: 5px;
+  }
+}
+/* Responsive styles for mobile phones */
+@media (max-width: 480px) {
+  .category-card {
+    max-width: 90px;
+  }
+
+  .category-card-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .category-card-title {
+    font-size: 0.7rem;
+  }
+}
+
+

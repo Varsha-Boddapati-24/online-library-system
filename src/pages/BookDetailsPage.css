@@ -1,0 +1,69 @@
+
+/* Container for book details card, centered with padding and shadow */
+.book-details {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  border: 1px solid rgb(190, 187, 187);
+  border-radius: 8px;
+  background-color:white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Flex container for book image and info, responsive wrapping */
+.book-details-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+/* Styling for book image with fixed size and rounded corners */
+.book-image {
+  flex: 1;
+  max-width: 300px;
+  height: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+/* Container for textual book info, takes more space */
+.book-info {
+  flex: 2;
+}
+/* Book title styling */
+.book-info h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #333;
+}
+/* Paragraph styling for author, description, rating, price */
+.book-info p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: rgb(62, 61, 61);
+}
+/* Emphasize labels in the info section */
+.book-info strong {
+  color:black;
+}
+/* Footer area for back button, centered with margin */
+.book-details-footer {
+  margin-top: 32px;
+  text-align: center;
+}
+/* Styling back button with background, padding, and rounded corners */
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.699);
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+/* Hover effect for back button */
+.back-button:hover {
+  background-color: black;
+}
+

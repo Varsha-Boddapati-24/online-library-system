@@ -1,0 +1,89 @@
+/* Book Card Container: fixed max width, white background, rounded corners, subtle shadow, padding, vertical flex layout */
+.book-card {
+    width: 100%;
+  max-width: 160px; 
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display:flex;
+  flex-direction: column;
+}
+/* Hover effect: slightly lift the card up */
+.book-card:hover {
+  transform: translateY(-5px);
+}
+/* Book image: fixed square size, rounded corners, maintain aspect ratio with object-fit */
+.book-card-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Title below the image: spacing, larger font size, dark color */
+.book-card-title {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+/* View details link: smaller font, no underline, margin at bottom to push it down */
+.view-details-link {
+  font-size: 14px;
+  /* color: #007bff; */
+  text-decoration: none;
+  margin-top: auto;
+  padding: 5px 0;
+}
+/* Responsive adjustments for tablets and smaller screens */
+@media (max-width: 768px) {
+  .book-card {
+    max-width: 120px;
+    padding: 0.5rem;
+    margin: 4px;
+  }
+
+  .book-card-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .book-card-title {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  .book-card-rating {
+    font-size: 0.75rem;
+  }
+
+  .view-details-link {
+    font-size: 12px;
+    padding: 3px 0;
+  }
+}
+/* Responsive adjustments for mobile phones */
+@media (max-width: 480px) {
+  .book-card {
+    max-width: 100px;
+    padding: 0.4rem;
+  }
+
+  .book-card-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .book-card-title {
+    font-size: 0.75rem;
+  }
+
+  .book-card-rating {
+    font-size: 0.7rem;
+  }
+
+  .view-details-link {
+    font-size: 11px;
+  }
+}

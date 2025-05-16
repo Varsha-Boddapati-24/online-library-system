@@ -1,0 +1,89 @@
+/* Main container with max width, centered and padded */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+/* Main page heading, large, centered, bold with margin below */
+.home-container h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+/* Category header: flex layout, space-between, vertically centered, with margin and horizontal padding */
+.categories-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+  padding: 0 0.5rem;
+}
+/* Category header title with medium font size, black color and semi-bold weight */
+.categories-header h2 {
+  font-size: 1.5rem;
+  color:black;
+  font-weight: 600;
+}
+/* See more link styled as blue clickable text with underline and pointer cursor */
+.see-more-link {
+  font-size: 0.9rem;
+  color: #3498db;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+/* See more link styled as blue clickable text with underline and pointer cursor */
+.see-more-link:hover {
+  color: #21618c;
+}
+/* Category grid: flex layout with wrapping and gap between items */
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+/* Book grid: similar flex layout with wrapping and spacing */
+.book-grid{
+ display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+}
+/* Popular books header with top and bottom margin and slight left indent */
+.popular-books-header {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  margin-left: 1rem;
+ 
+}
+/* Popular books title with medium font size and dark gray color */
+.popular-books-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+/* Responsive adjustments: smaller headings on tablets */
+@media (max-width: 768px) {
+  .home-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .categories-header h2,
+  .popular-books-header h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive adjustments: even smaller headings on mobile */
+@media (max-width: 480px) {
+  .home-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .categories-header h2,
+  .popular-books-header h2 {
+    font-size: 1rem;
+  }
+}

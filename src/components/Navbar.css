@@ -1,0 +1,99 @@
+/* Navbar container: full width, horizontal flex layout, spaced content, black bg */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 1rem 2rem;
+  color: #ecf0f1;
+  position: relative;
+}
+/* Hamburger menu toggle button, hidden on desktop */
+.menu-toggle {
+  display: none; 
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Desktop navigation links container: horizontal flex with gap */
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+/* Individual nav link styling: white background, black text, subtle shadow */
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(240, 233, 233, 0.913);
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+}
+/* Nav link hover effect: slight scaling */
+.nav-link:hover {
+  transform: scale(1.1);
+}
+/* Logo styling: flex container with spacing and white bold text */
+.logo {
+  display: flex;
+  gap:5px;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+
+}
+
+/* Responsive styles for screens 768px and below */
+@media (max-width: 768px) {
+  /* Show hamburger toggle button  */
+  .menu-toggle {
+    display: block;
+  }
+  
+  /* Hide nav links by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 150px;
+    background-color: black;
+    position: absolute;
+    top: 75px; 
+    right: 0;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+  
+    /* Show nav links when menu is toggled open */
+  .nav-links.open {
+    display: flex;
+  }
+/* Mobile nav link styling: transparent bg, full width, light text */
+  .nav-link {
+    /* padding: 1rem 1.5rem; */
+    border: none;
+    width: 100%;
+    box-shadow: none;
+    color: #ecf0f1;
+    background-color: transparent;
+    text-align: left;
+  }
+ /*  nav link hover: subtle background highlight, no transform */
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: none;
+  }
+}

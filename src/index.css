@@ -1,0 +1,12 @@
+/* Apply box-sizing to all elements for consistent sizing */
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+/* Base styling for body */
+body{
+  font-family:sans-serif;
+    position: relative;
+  min-height: 100vh;
+}

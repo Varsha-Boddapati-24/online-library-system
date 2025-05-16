@@ -1,0 +1,107 @@
+/* Container for browse page with horizontal layout and spacing */
+.browse-page {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+/* Sidebar container with fixed width and right border */
+.sidebar {
+  width: 200px;
+  border-right: 1px solid #ddd;
+}
+/* Sidebar heading spacing */
+.sidebar h3 {
+  margin-bottom: 10px;
+}
+/* Remove default list styles and padding from sidebar list */
+.sidebar ul {
+  list-style: none;
+  
+  padding: 0;
+}
+/* Sidebar list items with padding, pointer cursor and rounded corners */
+.sidebar li  {
+text-decoration: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+ 
+}
+/* Links inside sidebar list with no underline and black text */
+.sidebar ul  a{
+text-decoration: none;
+ color:black
+
+}
+/* Sidebar list item hover effect and active category highlight */
+.sidebar li:hover,
+.active-category {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+/* Main content takes remaining horizontal space */
+.main-content {
+  flex: 1;
+}
+/* Search bar margin below */
+.search-bar {
+  margin-bottom: 20px;
+}
+/* Search input styling with padding, full width, border radius and border */
+.search-bar input {
+  padding: 8px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+/* Book grid layout using CSS grid with responsive columns and gaps */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+/* Responsive layout for tablets and smaller: sidebar stacks vertically, sidebar styles adjust */
+@media (max-width: 768px) {
+  .browse-page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sidebar li {
+    flex: 1 0 30%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+
+  .sidebar li:hover,
+  .active-category {
+    background-color: #e0e0e0;
+  }
+}
+
+ /* Hover and active category highlight for smaller devices */
+@media (max-width: 480px) {
+  .sidebar ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .sidebar li {
+    flex: 0 0 auto;
+    min-width: 100px;
+  }
+}
